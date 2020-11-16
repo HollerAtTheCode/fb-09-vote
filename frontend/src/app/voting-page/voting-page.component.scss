@@ -1,0 +1,47 @@
+.voting-card{
+  width: 50rem;
+  margin: 5rem auto;
+  display: flex;
+  font-size: calc(0.75rem + 0.5vw);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba($color: #ffffff, $alpha: 0.9);
+  mat-card-content{
+    font-size: 1em;
+  }
+  form{
+    mat-label{
+      font-weight: bold;
+    }
+    .form-element{
+      margin: 2rem 0;
+    }
+    white-space: unset;
+    margin-top: 1rem;
+    mat-radio-group{
+      display: flex;
+      flex-direction: column;
+      mat-radio-button{
+        margin: 0.5rem 0;
+        width: 100%;
+      }
+    }
+    mat-form-field{
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+  }
+  .error-message{
+    color: red;
+  }
+  button{
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .voting-card{
+    width: 90%;
+  }
+}

@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="headings">
+    <h1>Herzlich Willkommen zum digitalen Abstimmungstool von ver.di Mittelfranken</h1>
+    <h2>Dies ist ein Stimmungsbild bezüglich des Tarifergebnis in der Tarifrunde öD</h2>
+  </div>
+  <mat-card class="authorization-card">
+    <mat-card-title>
+      Zugang zur Abstimmung
+    </mat-card-title>
+    <mat-card-content>
+      <mat-divider></mat-divider>
+      <div class="info-text">
+        <div>Bitte benutze zum abzustimmen deinen geheimen Abstimmungscode, welcher dir per eMail zugesendet wurde.</div>
+        <br>
+        <div>Bitte beachte, dass jeder Code nur einmal verwenden werden kann.</div>
+      </div>
+      <form class="authorization-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Abstimmungscode</mat-label>
+          <input matInput placeholder="Dein Abstimmungscode..." [(ngModel)]="authorizationKey"
+            [ngModelOptions]="{standalone: true}" required>
+        </mat-form-field>
+        <br>
+        <span *ngIf="errorMessage != ''" class="error-message">{{errorMessage}}</span>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button class="login-button" (click)="onSubmit()">Login</button>
+    </mat-card-actions>
+
+  </mat-card>
+</div>
+
+

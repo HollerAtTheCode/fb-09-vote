@@ -1,0 +1,222 @@
+<mat-card class="voting-card">
+  <mat-card-title>
+    Abstimmung
+  </mat-card-title>
+  <mat-card-content>
+    <mat-divider></mat-divider>
+    <form class="voting-form" [formGroup]="votingForm">
+      <div class="form-element">
+        <mat-label>In welcher Branche arbeitest Du?</mat-label>
+        <mat-radio-group aria-label="Wähle eine Option" formControlName="branche">
+          <mat-radio-button value="IT">IT</mat-radio-button>
+          <mat-radio-button value="Telekommunikation">Telekommunikation</mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <div class="form-element">
+        <mat-label>Durch die Corona Pandemie arbeite ich im Home-Office</mat-label>
+        <mat-radio-group aria-label="Wähle eine Option" formControlName="homeOffice">
+          <mat-radio-button value="Ja">Ja</mat-radio-button>
+          <mat-radio-button value="Nein">Nein</mat-radio-button>
+          <mat-radio-button value="Ich könnte im Home-Office arbeiten, möchte aber nicht">
+            Ich könnte im Home-Office arbeiten, möchte aber nicht
+          </mat-radio-button>
+          <mat-radio-button value="Würde gerne, meine Tätigkeit lässt es leider nicht zu">
+            Würde gerne, meine Tätigkeit lässt es leider nicht zu
+          </mat-radio-button>
+
+        </mat-radio-group>
+      </div>
+
+      <div class="form-element">
+        <mat-label>
+          Wie gut ist Ihr Arbeitgeber bzw. Ihr Unternehmen Ihrer Meinung nach darauf eingestellt, seine Mitarbeiter von zu Hause arbeiten zu lassen?
+        </mat-label>
+        <mat-radio-group aria-label="Wähle eine Option" formControlName="prepForHomeOffice">
+          <mat-radio-button value="Sehr gut">
+            Sehr gut
+          </mat-radio-button>
+          <mat-radio-button value="Eher gut">
+            Eher gut
+          </mat-radio-button>
+          <mat-radio-button value="Unentschieden">
+            Unentschieden
+          </mat-radio-button>
+          <mat-radio-button value="Schlecht">
+            Schlecht
+          </mat-radio-button>
+          <mat-radio-button value="Sehr schlecht">
+            Sehr schlecht
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <div class="form-element">
+        <mat-label>
+          Welche Ausstattung benötige ich für mobile Arbeit bzw. Home-Office
+        </mat-label>
+        <mat-form-field appearance="fill">
+          <mat-label>Ausstattung</mat-label>
+          <textarea matInput formControlName="equipmentForHomeOffice"></textarea>
+        </mat-form-field>
+      </div>
+
+      <div class="form-element">
+        <mat-label>
+          Welche Anforderungen habe ich als Beschäftigter an mobiler Arbeit bzw. Home-Office
+        </mat-label>
+        <mat-form-field appearance="fill">
+          <mat-label>Anforderungen</mat-label>
+          <textarea matInput formControlName="requirementsForHomeOffice"></textarea>
+        </mat-form-field>
+      </div>
+
+      <div class="form-element">
+        <mat-label>
+          Folgenden Probleme erschweren es mir, von zu Hause aus zu arbeiten?
+        </mat-label>
+        <mat-radio-group aria-label="Wähle eine Option" formControlName="problemsInHomeOffice">
+          <mat-radio-button value="Schlechtes WLAN">
+            Schlechtes WLAN
+          </mat-radio-button>
+          <mat-radio-button value="Lärmbelästigung">
+            Lärmbelästigung (Durch Nachbarn, Straße, etc.)
+          </mat-radio-button>
+          <mat-radio-button value="Mangelnde technische Ausstattung">
+            Mangelnde technische Ausstattung
+          </mat-radio-button>
+          <mat-radio-button value="Fehlender Arbeitsplatz">
+            Fehlender Arbeitsplatz
+          </mat-radio-button>
+          <mat-radio-button value="Erschwerte Kommunikation mit Kollegen">
+            Erschwerte Kommunikation mit Kollegen
+          </mat-radio-button>
+          <mat-radio-button value="Leichte Ablenkung">
+            Leichte Ablenkung
+          </mat-radio-button>
+          <mat-radio-button value="Störung durch Familie und Kinder">
+            Störung durch Familie und Kinder
+          </mat-radio-button>
+          <mat-radio-button value="Keine der genannten Antworten">
+            Keine der genannten Antworten
+          </mat-radio-button>
+        </mat-radio-group>
+        <mat-form-field *ngIf="problemsInHomeOffice ==='Keine der genannten Antworten'" appearance="fill">
+          <mat-label>Störung</mat-label>
+          <textarea matInput formControlName="customProblems"></textarea>
+        </mat-form-field>
+      </div>
+      
+      <div class="form-element">
+        <mat-label>
+          Ich arbeite im Home-Office...
+        </mat-label>
+        <mat-radio-group aria-label="Wähle eine Option" formControlName="workInHomeOffice">
+          <mat-radio-button value="konzentrierter">
+            konzentrierter
+          </mat-radio-button>
+          <mat-radio-button value="unkonzentrierter">
+            unkonzentrierter
+          </mat-radio-button>
+          <mat-radio-button value="Unentschieden">
+            Unentschieden
+          </mat-radio-button>
+          <mat-radio-button value="Merke keinen Unterschied">
+            Merke keinen Unterschied
+          </mat-radio-button>
+          <mat-radio-button value="Bin mir nicht sicher">
+            Bin mir nicht sicher
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <div class="form-element">
+        <mat-label>
+          Welche Qualifizierung benötige ich für Mobiles Arbeiten bzw. Home-Office
+        </mat-label>
+        <mat-form-field appearance="fill">
+          <mat-label>Qualifizierung</mat-label>
+          <textarea matInput formControlName="qualificationForHomeOffice"></textarea>
+        </mat-form-field>
+      </div>
+
+      <div class="form-element">
+        <mat-label>
+          Wie verändert sich die Kommunikationskultur in meinem Unternehmen
+        </mat-label>
+        <mat-form-field appearance="fill">
+          <mat-label>Veränderung</mat-label>
+          <textarea matInput formControlName="communicationChange"></textarea>
+        </mat-form-field>
+      </div>
+
+      <div class="form-element">
+        <mat-label>
+          Welche Regelungsrahmen braucht das Home-Office der Zukunft
+        </mat-label>
+        <mat-form-field appearance="fill">
+          <mat-label>Regelungsrahmen</mat-label>
+          <textarea matInput formControlName="rulesOfFutureHomeOffice"></textarea>
+        </mat-form-field>
+      </div>
+
+      <div class="form-element">
+        <mat-label>
+          Ich spare mir durch Home-Office folgende <u>einfache</u> Fahrzeit
+        </mat-label>
+        <mat-radio-group aria-label="Wähle eine Option" formControlName="savedTravelTime">
+          <mat-radio-button value="Unter 0,5 Stunden">
+            Unter 0,5 Stunden
+          </mat-radio-button>
+          <mat-radio-button value="Über 0,5 Stunden">
+            Über 0,5 Stunden
+          </mat-radio-button>
+          <mat-radio-button value="Über 1,0 Stunden">
+            Über 1,0 Stunden
+          </mat-radio-button>
+          <mat-radio-button value="Über 1,5 Stunden">
+            Über 1,5 Stunden
+          </mat-radio-button>
+          <mat-radio-button value="Über 2,0 Stunden">
+            Über 2,0 Stunden
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <div class="form-element">
+        <mat-label>
+          Welchem Geschlecht gehöre ich an
+        </mat-label>
+        <mat-radio-group aria-label="Wähle eine Option" formControlName="sex">
+          <mat-radio-button value="Weiblich">
+            Weiblich
+          </mat-radio-button>
+          <mat-radio-button value="Männliche">
+            Männliche
+          </mat-radio-button>
+          <mat-radio-button value="Divers">
+            Divers
+          </mat-radio-button>
+          <mat-radio-button value="Hat mit der Befragung nichts zu tun">
+            Hat mit der Befragung nichts zu tun
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <div class="form-element">
+        <mat-label>
+          Letzte Frage: Welche Erwartungen richte ich an ver.di (getrennt durch Komma)?
+        </mat-label>
+        <mat-form-field appearance="fill">
+          <mat-label>Erwartungen</mat-label>
+          <textarea matInput formControlName="expectationsFromVerdi"></textarea>
+        </mat-form-field>
+      </div>
+
+      <mat-divider></mat-divider>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button class="login-button" (click)="onSubmit()">Absenden</button>
+  </mat-card-actions>
+</mat-card>

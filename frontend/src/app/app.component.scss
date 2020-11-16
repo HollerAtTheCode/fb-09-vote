@@ -1,0 +1,71 @@
+*{
+  box-sizing: border-box;
+}
+html, body{
+  height: 100%;
+  position: relative;
+}
+.container{
+  min-height: 100vh; /* will cover the 100% of viewport */
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 7rem;
+}
+.verdi-logo{
+  width: 5rem;
+}
+mat-toolbar{
+  white-space: unset;
+  background-color: #e2e4e5;
+  border: 0.25px solid white;
+  min-height: 6rem;
+  .title-container{
+    margin-left: 5rem;
+  }
+  .title{
+    display: inline-block;
+    overflow-wrap: break-word;
+  }
+}
+.app-wrapper{
+  margin-bottom: 20vh;
+}
+
+.mat-list-base{
+  padding: 0;
+}
+
+.footer{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border: 1px solid black;
+  text-align: center;
+  font-size: calc(0.75rem + 0.5vw);
+  height: 5rem;
+  background-color: #e2e4e5;
+  h2{
+    font-size: 0.75em;
+    margin: 0.5em auto;
+    max-width: 90%;
+    margin-bottom: 0;
+  }
+  .link {
+    font-size: 0.5em;
+  }
+  .mat-list-item {
+    display: inline-block;
+    height: auto;
+    width: auto;
+  }
+}
+
+@media (max-width: 575px) {
+  .title-container{
+    font-size: 0.9rem;
+    line-height: 150%;
+  }
+}
+
