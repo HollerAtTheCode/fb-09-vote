@@ -12,14 +12,38 @@ export class VotingService {
   constructor(private http: HttpClient) { }
 
   public vote(votingForm: any): Observable<any> {
-    const vote = votingForm.vote;
-    const comment = votingForm.comment;
+    const branche = votingForm.branche;
+    const homeOffice = votingForm.homeOffice;
+    const prepForHomeOffice = votingForm.prepForHomeOffice;
+    const equipmentForHomeOffice = votingForm.equipmentForHomeOffice;
+    const requirementsForHomeOffice = votingForm.requirementsForHomeOffice;
+    const problemsInHomeOffice = votingForm.problemsInHomeOffice;
+    const customProblems = votingForm.customProblems;
+    const workInHomeOffice = votingForm.workInHomeOffice;
+    const qualificationForHomeOffice = votingForm.qualificationForHomeOffice;
+    const communicationChange = votingForm.communicationChange;
+    const rulesOfFutureHomeOffice = votingForm.rulesOfFutureHomeOffice;
+    const savedTravelTime = votingForm.savedTravelTime;
+    const gender = votingForm.gender;
+    const expectationsFromVerdi = votingForm.expectationsFromVerdi;
 
     const token = localStorage.getItem("authToken");
     const requestBody = {
-      vote,
-      comment,
-      token
+      token,
+      branche,
+      homeOffice,
+      prepForHomeOffice,
+      equipmentForHomeOffice,
+      requirementsForHomeOffice,
+      problemsInHomeOffice,
+      customProblems,
+      workInHomeOffice,
+      qualificationForHomeOffice,
+      communicationChange,
+      rulesOfFutureHomeOffice,
+      savedTravelTime,
+      gender,
+      expectationsFromVerdi
     };
     return this.http.post(this.baseUrl + '/vote', requestBody);
   }

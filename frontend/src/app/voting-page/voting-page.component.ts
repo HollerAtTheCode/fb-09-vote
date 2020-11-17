@@ -26,7 +26,7 @@ export class VotingPageComponent implements OnInit {
       communicationChange: ['', Validators.required],
       rulesOfFutureHomeOffice: ['', Validators.required],
       savedTravelTime: ['', Validators.required],
-      sex: ['', Validators.required],
+      gender: ['', Validators.required],
       expectationsFromVerdi: ['']
     });
   }
@@ -35,13 +35,12 @@ export class VotingPageComponent implements OnInit {
   }
 
   onSubmit() {
-    // this.votingService.vote(this.votingForm.value).subscribe((resp) => {
-    //   if (resp.changedRows === 1) {
-    //     localStorage.removeItem('authToken');
-    //     this.router.navigate(['/voting-completed']);
-    //   }
-    // });
-    console.log(this.votingForm.value);
+    this.votingService.vote(this.votingForm.value).subscribe((resp) => {
+      if (resp.changedRows === 1) {
+        localStorage.removeItem('authToken');
+        this.router.navigate(['/voting-completed']);
+      }
+    });
   }
 
   //Getter

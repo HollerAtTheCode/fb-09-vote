@@ -8,20 +8,20 @@
       <div class="form-element">
         <mat-label>In welcher Branche arbeitest Du?</mat-label>
         <mat-radio-group aria-label="Wähle eine Option" formControlName="branche">
-          <mat-radio-button value="IT">IT</mat-radio-button>
-          <mat-radio-button value="Telekommunikation">Telekommunikation</mat-radio-button>
+          <mat-radio-button value=0>IT</mat-radio-button>
+          <mat-radio-button value=1>Telekommunikation</mat-radio-button>
         </mat-radio-group>
       </div>
 
       <div class="form-element">
         <mat-label>Durch die Corona Pandemie arbeite ich im Home-Office</mat-label>
         <mat-radio-group aria-label="Wähle eine Option" formControlName="homeOffice">
-          <mat-radio-button value="Ja">Ja</mat-radio-button>
-          <mat-radio-button value="Nein">Nein</mat-radio-button>
-          <mat-radio-button value="Ich könnte im Home-Office arbeiten, möchte aber nicht">
+          <mat-radio-button value=0>Ja</mat-radio-button>
+          <mat-radio-button value=1>Nein</mat-radio-button>
+          <mat-radio-button value=2>
             Ich könnte im Home-Office arbeiten, möchte aber nicht
           </mat-radio-button>
-          <mat-radio-button value="Würde gerne, meine Tätigkeit lässt es leider nicht zu">
+          <mat-radio-button value=3>
             Würde gerne, meine Tätigkeit lässt es leider nicht zu
           </mat-radio-button>
 
@@ -33,19 +33,19 @@
           Wie gut ist Ihr Arbeitgeber bzw. Ihr Unternehmen Ihrer Meinung nach darauf eingestellt, seine Mitarbeiter von zu Hause arbeiten zu lassen?
         </mat-label>
         <mat-radio-group aria-label="Wähle eine Option" formControlName="prepForHomeOffice">
-          <mat-radio-button value="Sehr gut">
+          <mat-radio-button value=0>
             Sehr gut
           </mat-radio-button>
-          <mat-radio-button value="Eher gut">
+          <mat-radio-button value=1>
             Eher gut
           </mat-radio-button>
-          <mat-radio-button value="Unentschieden">
+          <mat-radio-button value=2>
             Unentschieden
           </mat-radio-button>
-          <mat-radio-button value="Schlecht">
+          <mat-radio-button value=3>
             Schlecht
           </mat-radio-button>
-          <mat-radio-button value="Sehr schlecht">
+          <mat-radio-button value=4>
             Sehr schlecht
           </mat-radio-button>
         </mat-radio-group>
@@ -76,32 +76,32 @@
           Folgenden Probleme erschweren es mir, von zu Hause aus zu arbeiten?
         </mat-label>
         <mat-radio-group aria-label="Wähle eine Option" formControlName="problemsInHomeOffice">
-          <mat-radio-button value="Schlechtes WLAN">
+          <mat-radio-button value=0>
             Schlechtes WLAN
           </mat-radio-button>
-          <mat-radio-button value="Lärmbelästigung">
+          <mat-radio-button value=1>
             Lärmbelästigung (Durch Nachbarn, Straße, etc.)
           </mat-radio-button>
-          <mat-radio-button value="Mangelnde technische Ausstattung">
+          <mat-radio-button value=2>
             Mangelnde technische Ausstattung
           </mat-radio-button>
-          <mat-radio-button value="Fehlender Arbeitsplatz">
+          <mat-radio-button value=3>
             Fehlender Arbeitsplatz
           </mat-radio-button>
-          <mat-radio-button value="Erschwerte Kommunikation mit Kollegen">
+          <mat-radio-button value=4>
             Erschwerte Kommunikation mit Kollegen
           </mat-radio-button>
-          <mat-radio-button value="Leichte Ablenkung">
+          <mat-radio-button value=5>
             Leichte Ablenkung
           </mat-radio-button>
-          <mat-radio-button value="Störung durch Familie und Kinder">
+          <mat-radio-button value=6>
             Störung durch Familie und Kinder
           </mat-radio-button>
-          <mat-radio-button value="Keine der genannten Antworten">
+          <mat-radio-button value=7>
             Keine der genannten Antworten
           </mat-radio-button>
         </mat-radio-group>
-        <mat-form-field *ngIf="problemsInHomeOffice ==='Keine der genannten Antworten'" appearance="fill">
+        <mat-form-field *ngIf="problemsInHomeOffice === 7" appearance="fill">
           <mat-label>Störung</mat-label>
           <textarea matInput formControlName="customProblems"></textarea>
         </mat-form-field>
@@ -112,19 +112,19 @@
           Ich arbeite im Home-Office...
         </mat-label>
         <mat-radio-group aria-label="Wähle eine Option" formControlName="workInHomeOffice">
-          <mat-radio-button value="konzentrierter">
+          <mat-radio-button value=0>
             konzentrierter
           </mat-radio-button>
-          <mat-radio-button value="unkonzentrierter">
+          <mat-radio-button value=1>
             unkonzentrierter
           </mat-radio-button>
-          <mat-radio-button value="Unentschieden">
+          <mat-radio-button value=2>
             Unentschieden
           </mat-radio-button>
-          <mat-radio-button value="Merke keinen Unterschied">
+          <mat-radio-button value=3>
             Merke keinen Unterschied
           </mat-radio-button>
-          <mat-radio-button value="Bin mir nicht sicher">
+          <mat-radio-button value=4>
             Bin mir nicht sicher
           </mat-radio-button>
         </mat-radio-group>
@@ -165,19 +165,19 @@
           Ich spare mir durch Home-Office folgende <u>einfache</u> Fahrzeit
         </mat-label>
         <mat-radio-group aria-label="Wähle eine Option" formControlName="savedTravelTime">
-          <mat-radio-button value="Unter 0,5 Stunden">
+          <mat-radio-button value=0>
             Unter 0,5 Stunden
           </mat-radio-button>
-          <mat-radio-button value="Über 0,5 Stunden">
+          <mat-radio-button value=1>
             Über 0,5 Stunden
           </mat-radio-button>
-          <mat-radio-button value="Über 1,0 Stunden">
+          <mat-radio-button value=2>
             Über 1,0 Stunden
           </mat-radio-button>
-          <mat-radio-button value="Über 1,5 Stunden">
+          <mat-radio-button value=3>
             Über 1,5 Stunden
           </mat-radio-button>
-          <mat-radio-button value="Über 2,0 Stunden">
+          <mat-radio-button value=4>
             Über 2,0 Stunden
           </mat-radio-button>
         </mat-radio-group>
@@ -187,17 +187,17 @@
         <mat-label>
           Welchem Geschlecht gehöre ich an
         </mat-label>
-        <mat-radio-group aria-label="Wähle eine Option" formControlName="sex">
-          <mat-radio-button value="Weiblich">
+        <mat-radio-group aria-label="Wähle eine Option" formControlName="gender">
+          <mat-radio-button value=0>
             Weiblich
           </mat-radio-button>
-          <mat-radio-button value="Männliche">
+          <mat-radio-button value=1>
             Männliche
           </mat-radio-button>
-          <mat-radio-button value="Divers">
+          <mat-radio-button value=2>
             Divers
           </mat-radio-button>
-          <mat-radio-button value="Hat mit der Befragung nichts zu tun">
+          <mat-radio-button value=3>
             Hat mit der Befragung nichts zu tun
           </mat-radio-button>
         </mat-radio-group>
