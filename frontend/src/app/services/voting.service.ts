@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class VotingService {
 
-  private baseUrl = 'https://tarifrunde-mittelfranken.de:8080';
+  private baseUrl = 'https://fb09bayern.de:8080';
 
   constructor(private http: HttpClient) { }
 
