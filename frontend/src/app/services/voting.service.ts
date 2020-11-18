@@ -17,7 +17,7 @@ export class VotingService {
     const prepForHomeOffice = votingForm.prepForHomeOffice;
     const equipmentForHomeOffice = votingForm.equipmentForHomeOffice;
     const requirementsForHomeOffice = votingForm.requirementsForHomeOffice;
-    const problemsInHomeOffice = votingForm.problemsInHomeOffice;
+    const problemsInHomeOffice = votingForm.problemsInHomeOffice.toString();
     const customProblems = votingForm.customProblems;
     const workInHomeOffice = votingForm.workInHomeOffice;
     const qualificationForHomeOffice = votingForm.qualificationForHomeOffice;

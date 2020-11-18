@@ -13,6 +13,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 
 
 import { LoginComponent } from './login/login.component';
@@ -44,6 +46,7 @@ import { InformationComponent } from './information/information.component';
     HttpClientModule,
     MatListModule,
     MatRadioModule,
+    MatCheckboxModule
 
   ],
   providers: [AuthenticationService],

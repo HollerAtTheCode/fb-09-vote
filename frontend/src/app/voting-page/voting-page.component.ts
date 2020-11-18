@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { VotingService } from '../services/voting.service';
 
@@ -19,7 +19,7 @@ export class VotingPageComponent implements OnInit {
       prepForHomeOffice: ['', Validators.required],
       equipmentForHomeOffice: ['', Validators.required],
       requirementsForHomeOffice: ['', Validators.required],
-      problemsInHomeOffice: ['', Validators.required],
+      problemsInHomeOffice: new FormArray([]),
       customProblems: [''],
       workInHomeOffice: ['', Validators.required],
       qualificationForHomeOffice: ['', Validators.required],
@@ -34,6 +34,22 @@ export class VotingPageComponent implements OnInit {
   ngOnInit() {
   }
 
+  onProblemChange(e, checked) {
+    const value = e.target.outerText;
+    if (checked) {
+      this.problemsInHomeOffice.value.push(value);
+    }
+    else {
+      this.problemsInHomeOffice.value.forEach((v, i) => {
+        if (v === value) {
+          this.problemsInHomeOffice.value.splice(i, 1);
+        }
+      });
+    }
+    console.log(this.problemsInHomeOffice.value);
+    console.log(e.target.outerText);
+  }
+
   onSubmit() {
     this.votingService.vote(this.votingForm.value).subscribe((resp) => {
       if (resp.changedRows === 1) {
@@ -45,7 +61,7 @@ export class VotingPageComponent implements OnInit {
 
   //Getter
   get problemsInHomeOffice(){
-    return this.votingForm.get("problemsInHomeOffice").value;
+    return this.votingForm.get("problemsInHomeOffice") as FormArray;
   }
 
 }

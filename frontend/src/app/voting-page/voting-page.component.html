@@ -53,7 +53,7 @@
 
       <div class="form-element">
         <mat-label>
-          Welche Ausstattung benötige ich für mobile Arbeit bzw. Home-Office
+          Was fehlt für mich um gut im Home-Office bzw. mobil zu Arbeiten
         </mat-label>
         <mat-form-field appearance="fill">
           <mat-label>Ausstattung</mat-label>
@@ -75,33 +75,33 @@
         <mat-label>
           Folgenden Probleme erschweren es mir, von zu Hause aus zu arbeiten?
         </mat-label>
-        <mat-radio-group aria-label="Wähle eine Option" formControlName="problemsInHomeOffice">
-          <mat-radio-button value=0>
-            Schlechtes WLAN
-          </mat-radio-button>
-          <mat-radio-button value=1>
-            Lärmbelästigung (Durch Nachbarn, Straße, etc.)
-          </mat-radio-button>
-          <mat-radio-button value=2>
-            Mangelnde technische Ausstattung
-          </mat-radio-button>
-          <mat-radio-button value=3>
-            Fehlender Arbeitsplatz
-          </mat-radio-button>
-          <mat-radio-button value=4>
-            Erschwerte Kommunikation mit Kollegen
-          </mat-radio-button>
-          <mat-radio-button value=5>
-            Leichte Ablenkung
-          </mat-radio-button>
-          <mat-radio-button value=6>
-            Störung durch Familie und Kinder
-          </mat-radio-button>
-          <mat-radio-button value=7>
-            Keine der genannten Antworten
-          </mat-radio-button>
-        </mat-radio-group>
-        <mat-form-field *ngIf="problemsInHomeOffice === '7'" appearance="fill">
+        <section class="multiple-choice-section">
+          <div class="multiple-choice-section-element">
+            <mat-checkbox #check0 class="multiple-choice-section-element" [value]="0" (click)="onProblemChange($event, !check0.checked)">Schlechte Internetverbindung</mat-checkbox>
+          </div>
+          <div class="multiple-choice-section-element">
+            <mat-checkbox #check1 class="multiple-choice-section-element" [value]="1" (click)="onProblemChange($event, !check1.checked)">Lärmbelästigung (Durch Nachbarn, Straße, etc.)</mat-checkbox>
+          </div>
+          <div class="multiple-choice-section-element">
+            <mat-checkbox #check2 class="multiple-choice-section-element" [value]="2" (click)="onProblemChange($event, !check2.checked)">Mangelnde technische Ausstattung</mat-checkbox>
+          </div>
+          <div class="multiple-choice-section-element">
+            <mat-checkbox #check3 class="multiple-choice-section-element" [value]="3" (click)="onProblemChange($event, !check3.checked)">Fehlender Arbeitsplatz</mat-checkbox>
+          </div>
+          <div class="multiple-choice-section-element">
+            <mat-checkbox #check4 class="multiple-choice-section-element" [value]="4" (click)="onProblemChange($event, !check4.checked)">Erschwerte Kommunikation mit Kollegen</mat-checkbox>
+          </div>
+          <div class="multiple-choice-section-element">
+            <mat-checkbox #check5 class="multiple-choice-section-element" [value]="5" (click)="onProblemChange($event, !check5.checked)">Leichte Ablenkung</mat-checkbox>
+          </div>
+          <div class="multiple-choice-section-element">
+            <mat-checkbox #check6 class="multiple-choice-section-element" [value]="6" (click)="onProblemChange($event, !check6.checked)">Störung durch Familie und Kinder</mat-checkbox>
+          </div>
+          <div class="multiple-choice-section-element">
+            <mat-checkbox #check7 class="multiple-choice-section-element" [value]="7" (click)="onProblemChange($event, !check7.checked)">Keine der genannten Antworten</mat-checkbox>
+          </div>
+        </section>
+        <mat-form-field *ngIf="problemsInHomeOffice.value.includes('Keine der genannten Antworten')" appearance="fill">
           <mat-label>Störung</mat-label>
           <textarea matInput formControlName="customProblems"></textarea>
         </mat-form-field>
@@ -132,7 +132,7 @@
 
       <div class="form-element">
         <mat-label>
-          Welche Qualifizierung benötige ich für Mobiles Arbeiten bzw. Home-Office
+          Welche Qualifizierung benötige Ich für Mobiles Arbeiten bzw. Home-Office
         </mat-label>
         <mat-form-field appearance="fill">
           <mat-label>Qualifizierung</mat-label>
@@ -205,7 +205,7 @@
 
       <div class="form-element">
         <mat-label>
-          Letzte Frage: Welche Erwartungen richte ich an ver.di (getrennt durch Komma)?
+          Letzte Frage: Was sollte aus Deiner/Ihrer Sicht in Tarifverträgen, Betriebsvereinbarungen bzw. gesetzlich geregelt werden?
         </mat-label>
         <mat-form-field appearance="fill">
           <mat-label>Erwartungen</mat-label>
