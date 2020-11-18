@@ -80,23 +80,25 @@ app.post('/vote', function (req, res) {
   const expectationsFromVerdi = req.body.expectationsFromVerdi;
 
   console.log(req.body.token);
-  dbCon.query("UPDATE " + tableName + " SET voted = 1, " +  
-  "branche = " + branche + 
-  ", home_office = " + homeOffice + 
-  ", preparation_for_home_office = " + prepForHomeOffice + 
-  ", equipment_for_home_office = " + equipmentForHomeOffice + 
-  ", requirements_for_home_office = " + requirementsForHomeOffice + 
-  ", problems_in_home_office = " + problemsInHomeOffice + 
-  ", custom_problems = " + customProblems + 
-  ", work_in_home_office = " + workInHomeOffice + 
-  ", qualification_for_home_office = " + qualificationForHomeOffice + 
-  ", communication_change = " + communicationChange + 
-  ", rules_of_future_home_office = " + rulesOfFutureHomeOffice + 
-  ", saved_travel_time = " + savedTravelTime + 
-  ", gender = " + gender + 
-  ", expectations_from_verdi = " + expectationsFromVerdi + 
-  " WHERE token = " + token + ";",
-  function(err, dbResult) {
+
+  const sql = "UPDATE " + tableName + " SET voted = '1', " +  
+  "branche = '" + branche + 
+  "', home_office = '" + homeOffice + 
+  "', preparation_for_home_office = '" + prepForHomeOffice + 
+  "', equipment_for_home_office = '" + equipmentForHomeOffice + 
+  "', requirements_for_home_office = '" + requirementsForHomeOffice + 
+  "', problems_in_home_office = '" + problemsInHomeOffice + 
+  "', custom_problems = '" + customProblems + 
+  "', work_in_home_office = '" + workInHomeOffice + 
+  "', qualification_for_home_office = '" + qualificationForHomeOffice + 
+  "', communication_change = '" + communicationChange + 
+  "', rules_of_future_home_office = '" + rulesOfFutureHomeOffice + 
+  "', saved_travel_time = '" + savedTravelTime + 
+  "', gender = '" + gender + 
+  "', expectations_from_verdi = '" + expectationsFromVerdi + 
+  "' WHERE token = " + token + ";";^
+  console.log(sql);
+  dbCon.query(sql, function(err, dbResult) {
     if (err) throw err;
     res.send(dbResult);
   })
