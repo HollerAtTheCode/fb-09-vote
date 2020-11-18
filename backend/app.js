@@ -70,7 +70,7 @@ app.post('/vote', function (req, res) {
   const equipmentForHomeOffice = req.body.equipmentForHomeOffice;
   const requirementsForHomeOffice = req.body.requirementsForHomeOffice;
   const problemsInHomeOffice = req.body.problemsInHomeOffice;
-  const customProblems = req.body.customProblems;
+  const customProblems = req.body.customProblems === '' ? null : req.body.customProblems;
   const workInHomeOffice = req.body.workInHomeOffice;
   const qualificationForHomeOffice = req.body.qualificationForHomeOffice;
   const communicationChange = req.body.communicationChange;
@@ -96,10 +96,13 @@ app.post('/vote', function (req, res) {
   "', saved_travel_time = '" + savedTravelTime + 
   "', gender = '" + gender + 
   "', expectations_from_verdi = '" + expectationsFromVerdi + 
-  "' WHERE token = " + token + ";";^
+  "' WHERE token = '" + token + "';";
   console.log(sql);
   dbCon.query(sql, function(err, dbResult) {
-    if (err) throw err;
+    if (err) {
+      console.log("error");
+      throw err;
+    }
     res.send(dbResult);
   })
 
