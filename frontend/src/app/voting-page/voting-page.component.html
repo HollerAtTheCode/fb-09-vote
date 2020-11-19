@@ -6,7 +6,7 @@
     <mat-divider></mat-divider>
     <form class="voting-form" [formGroup]="votingForm">
       <div class="form-element">
-        <mat-label>In welcher Branche arbeitest Du?</mat-label>
+        <mat-label>In welcher Branche arbeitest Du? <span class="required">*</span></mat-label>
         <mat-radio-group aria-label="Wähle eine Option" formControlName="branche">
           <mat-radio-button value=0>IT</mat-radio-button>
           <mat-radio-button value=1>Telekommunikation</mat-radio-button>
@@ -14,9 +14,9 @@
       </div>
 
       <div class="form-element">
-        <mat-label>Durch die Corona Pandemie arbeite ich im Home-Office</mat-label>
+        <mat-label>Durch die Corona Pandemie arbeite Ich im Home-Office <span class="required">*</span></mat-label>
         <mat-radio-group aria-label="Wähle eine Option" formControlName="homeOffice">
-          <mat-radio-button value=0>Ja</mat-radio-button>
+          <mat-radio-button value=0 [checked] = "true">Ja</mat-radio-button>
           <mat-radio-button value=1>Nein</mat-radio-button>
           <mat-radio-button value=2>
             Ich könnte im Home-Office arbeiten, möchte aber nicht
@@ -30,10 +30,11 @@
 
       <div class="form-element">
         <mat-label>
-          Wie gut ist Ihr Arbeitgeber bzw. Ihr Unternehmen Ihrer Meinung nach darauf eingestellt, seine Mitarbeiter von zu Hause arbeiten zu lassen?
+          Wie gut ist Dein Arbeitgeber bzw. Dein Unternehmen Deiner Meinung nach darauf eingestellt, 
+          seine Mitarbeiter von zu Hause arbeiten zu lassen? <span class="required">*</span>
         </mat-label>
         <mat-radio-group aria-label="Wähle eine Option" formControlName="prepForHomeOffice">
-          <mat-radio-button value=0>
+          <mat-radio-button value=0 [checked] = "true">
             Sehr gut
           </mat-radio-button>
           <mat-radio-button value=1>
@@ -63,7 +64,7 @@
 
       <div class="form-element">
         <mat-label>
-          Welche Anforderungen habe ich als Beschäftigter an mobiler Arbeit bzw. Home-Office
+          Welche Anforderungen habe Ich als Beschäftigter an mobiler Arbeit bzw. Home-Office
         </mat-label>
         <mat-form-field appearance="fill">
           <mat-label>Anforderungen</mat-label>
@@ -73,7 +74,7 @@
 
       <div class="form-element">
         <mat-label>
-          Folgenden Probleme erschweren es mir, von zu Hause aus zu arbeiten?
+          Folgenden Probleme erschweren es mir, von zu Hause aus zu arbeiten? <span class="required">*</span>
         </mat-label>
         <section class="multiple-choice-section">
           <div class="multiple-choice-section-element">
@@ -109,10 +110,10 @@
       
       <div class="form-element">
         <mat-label>
-          Ich arbeite im Home-Office...
+          Ich arbeite im Home-Office... <span class="required">*</span>
         </mat-label>
         <mat-radio-group aria-label="Wähle eine Option" formControlName="workInHomeOffice">
-          <mat-radio-button value=0>
+          <mat-radio-button value=0 [checked] = "true">
             konzentrierter
           </mat-radio-button>
           <mat-radio-button value=1>
@@ -162,10 +163,10 @@
 
       <div class="form-element">
         <mat-label>
-          Ich spare mir durch Home-Office folgende <u>einfache</u> Fahrzeit
+          Ich spare mir durch Home-Office folgende <u>einfache</u> Fahrzeit <span class="required">*</span>
         </mat-label>
         <mat-radio-group aria-label="Wähle eine Option" formControlName="savedTravelTime">
-          <mat-radio-button value=0>
+          <mat-radio-button value=0 [checked] = "true">
             Unter 0,5 Stunden
           </mat-radio-button>
           <mat-radio-button value=1>
@@ -185,10 +186,10 @@
 
       <div class="form-element">
         <mat-label>
-          Welchem Geschlecht gehöre ich an
+          Welchem Geschlecht gehöre ich an <span class="required">*</span>
         </mat-label>
         <mat-radio-group aria-label="Wähle eine Option" formControlName="gender">
-          <mat-radio-button value=0>
+          <mat-radio-button value=0 [checked] = "true">
             Weiblich
           </mat-radio-button>
           <mat-radio-button value=1>
@@ -205,7 +206,7 @@
 
       <div class="form-element">
         <mat-label>
-          Letzte Frage: Was sollte aus Deiner/Ihrer Sicht in Tarifverträgen, Betriebsvereinbarungen bzw. gesetzlich geregelt werden?
+          Letzte Frage: Was sollte aus Deiner Sicht in Tarifverträgen, Betriebsvereinbarungen bzw. gesetzlich geregelt werden?
         </mat-label>
         <mat-form-field appearance="fill">
           <mat-label>Erwartungen</mat-label>

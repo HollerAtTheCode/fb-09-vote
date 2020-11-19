@@ -12,21 +12,23 @@ export class VotingPageComponent implements OnInit {
 
   public votingForm: FormGroup;
 
+  public submitted = false;
+
   constructor(private fb: FormBuilder, private votingService: VotingService, private router: Router) {
     this.votingForm = fb.group({
-      branche: ['', Validators.required],
-      homeOffice: ['', Validators.required],
-      prepForHomeOffice: ['', Validators.required],
-      equipmentForHomeOffice: ['', Validators.required],
-      requirementsForHomeOffice: ['', Validators.required],
+      branche: ['0', Validators.required],
+      homeOffice: ['0', Validators.required],
+      prepForHomeOffice: ['0', Validators.required],
+      equipmentForHomeOffice: [''],
+      requirementsForHomeOffice: [''],
       problemsInHomeOffice: new FormArray([]),
       customProblems: [''],
-      workInHomeOffice: ['', Validators.required],
-      qualificationForHomeOffice: ['', Validators.required],
-      communicationChange: ['', Validators.required],
-      rulesOfFutureHomeOffice: ['', Validators.required],
-      savedTravelTime: ['', Validators.required],
-      gender: ['', Validators.required],
+      workInHomeOffice: ['0', Validators.required],
+      qualificationForHomeOffice: [''],
+      communicationChange: [''],
+      rulesOfFutureHomeOffice: [''],
+      savedTravelTime: ['0', Validators.required],
+      gender: ['0', Validators.required],
       expectationsFromVerdi: ['']
     });
   }
@@ -51,12 +53,16 @@ export class VotingPageComponent implements OnInit {
   }
 
   onSubmit() {
-    this.votingService.vote(this.votingForm.value).subscribe((resp) => {
-      if (resp.changedRows === 1) {
-        localStorage.removeItem('authToken');
-        this.router.navigate(['/voting-completed']);
-      }
-    });
+    this.submitted = true;
+    console.log(this.votingForm.value);
+    if (this.votingForm.valid) {
+      this.votingService.vote(this.votingForm.value).subscribe((resp) => {
+        if (resp.changedRows === 1) {
+          localStorage.removeItem('authToken');
+          this.router.navigate(['/voting-completed']);
+        }
+      });
+    }
   }
 
   //Getter
