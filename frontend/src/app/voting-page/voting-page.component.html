@@ -24,8 +24,12 @@
           <mat-radio-button value=3>
             Würde gerne, meine Tätigkeit lässt es leider nicht zu
           </mat-radio-button>
-
         </mat-radio-group>
+      </div>
+
+      <div *ngIf="homeOffice === '1'" class="info-text">
+        Da Du nicht im Home-Office arbeitest, kannst Du die folgenden Fragen ignorieren 
+        und Deine Abstimmung direkt abschicken!
       </div>
 
       <div class="form-element">

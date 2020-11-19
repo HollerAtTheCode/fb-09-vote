@@ -69,5 +69,8 @@ export class VotingPageComponent implements OnInit {
   get problemsInHomeOffice(){
     return this.votingForm.get("problemsInHomeOffice") as FormArray;
   }
+  get homeOffice(){
+    return this.votingForm.get("homeOffice").value;
+  }
 
 }
